@@ -8,5 +8,4 @@ namespace TestTask.Api.Domain.Calculations;
 [Route(Routes.Calculations)]
 public class CalculationsController(IMediator mediator) : ApiControllerBase
 {
-    
 }
