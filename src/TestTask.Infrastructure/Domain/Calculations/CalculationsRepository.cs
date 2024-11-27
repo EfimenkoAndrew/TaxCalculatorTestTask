@@ -1,27 +1,13 @@
 using TestTask.Core.Domain.Calculations.Common;
 using TestTask.Core.Domain.Calculations.Models;
+using TestTask.Persistence.CalculationsDb;
 
 namespace TestTask.Infrastructure.Domain.Calculations;
 
-public class CalculationsRepository : ICalculationsRepository
+public class CalculationsRepository(CalculationsDbContext calculationsDbContext) : ICalculationsRepository
 {
-    public Task<Calculation> FindAsync(Guid id, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<IReadOnlyCollection<Calculation>> FindManyAsync(IReadOnlyCollection<Guid> ids, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
-
     public void Add(Calculation calculation)
     {
-        throw new NotImplementedException();
-    }
-
-    public void Delete(IReadOnlyCollection<Calculation> calculations)
-    {
-        throw new NotImplementedException();
+        calculationsDbContext.Calculations.Add(calculation);
     }
 }

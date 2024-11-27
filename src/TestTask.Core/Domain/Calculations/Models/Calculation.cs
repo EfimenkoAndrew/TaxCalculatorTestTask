@@ -85,12 +85,10 @@ public class Calculation : Entity
 
         // band B - 5,000 - 20,000 -> 20%
         var bandB = 20000;
-        grossAnnualSalary -= bandA;
-        if (grossAnnualSalary < bandB) return grossAnnualSalary * 0.20m;
+        if (grossAnnualSalary < bandB) return (grossAnnualSalary - bandA) * 0.20m;
 
         // band C - 20,001 and up -> 40%
         var bandC = 20000;
-        grossAnnualSalary -= bandC;
-        return bandA * 0 + bandB * 0.20m + grossAnnualSalary * 0.40m;
+        return bandA * 0 + ((bandB - bandA) * 0.20m) + (grossAnnualSalary - bandC) * 0.40m;
     }
 }
