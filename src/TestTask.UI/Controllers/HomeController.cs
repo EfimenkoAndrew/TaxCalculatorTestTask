@@ -47,7 +47,15 @@ public class HomeController(
             var createCalculationRequest = new CreateCalculationRequest(model.InputValue);
             var response = await calculationsHttpClient.CalculateAsync(createCalculationRequest, cancellationToken);
             // Handle the result as needed
-            var result = new CalculationViewModel { Id = response.Id };
+            var result = new CalculationViewModel
+            {
+                GrossAnnualSalary = response.GrossAnnualSalary,
+                GrossMonthlySalary = response.GrossMonthlySalary,
+                NetAnnualSalary = response.NetAnnualSalary,
+                NetMonthlySalary = response.NetMonthlySalary,
+                AnnualTaxPaid = response.AnnualTaxPaid,
+                MonthlyTaxPaid = response.MonthlyTaxPaid
+            };
             return View("Index", result);
         }
 

@@ -6,7 +6,7 @@
 
 <form asp-action="CreateCalculation" method="post">
     <div class="form-group">
-        <label for="inputValue">Input Value</label>03/2
+        <label for="inputValue">Input Value</label>
         <input type="text" class="form-control" id="inputValue" name="InputValue" required />
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
@@ -14,5 +14,12 @@
 
 @if (Model is not null)
 {
-    <p>Result: @Model.Id</p>
+    <p>Gross Annual Salary: @Model.GrossAnnualSalary</p>
+    <p>Gross Monthly Salary: @Model.GrossMonthlySalary</p>
+    <p>Net Annual Salary: @Model.NetAnnualSalary</p>
+    <p>Net Monthly Salary: @Model.NetMonthlySalary</p>
+    <p>Annual Tax Paid: @Model.AnnualTaxPaid</p>
+    <p>Monthly Tax Paid: @Model.MonthlyTaxPaid</p>
 }
+
+
