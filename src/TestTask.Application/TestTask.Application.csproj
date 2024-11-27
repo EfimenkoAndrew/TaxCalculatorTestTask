@@ -14,4 +14,11 @@
       <ProjectReference Include="..\TestTask.Core\TestTask.Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Domain\Calculations\Commands\CreateCalculation\" />
+      <Folder Include="Domain\Calculations\Events\" />
+      <Folder Include="Domain\Calculations\Queries\GetCalculationDetails\" />
+      <Folder Include="Domain\Calculations\Queries\GetCalculations\" />
+    </ItemGroup>
+
 </Project>

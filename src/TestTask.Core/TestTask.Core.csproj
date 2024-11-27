@@ -11,10 +11,4 @@
       <PackageReference Include="MediatR" Version="12.4.1" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Domain\Calculations\Data\" />
-      <Folder Include="Domain\Calculations\Events\" />
-      <Folder Include="Domain\Calculations\Validators\" />
-    </ItemGroup>
-
 </Project>
