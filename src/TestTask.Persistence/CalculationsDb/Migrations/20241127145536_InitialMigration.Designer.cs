@@ -12,7 +12,7 @@ using TestTask.Persistence.CalculationsDb;
 namespace TestTask.Persistence.CalculationsDb.Migrations
 {
     [DbContext(typeof(CalculationsDbContext))]
-    [Migration("20241127141048_InitialMigration")]
+    [Migration("20241127145536_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />

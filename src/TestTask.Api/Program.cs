@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using TestTask.Application;
 using TestTask.Infrastructure;
@@ -30,10 +31,18 @@ builder.Services.AddToDoListDb(builder.Configuration);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
+// Apply migrations on startup
+using (var scope = app.Services.CreateScope())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<CalculationsDbContext>();
+
+    context.Database.Migrate();
 }
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.UseHttpsRedirection();
 app.Run();

@@ -38,10 +38,7 @@ public abstract class Entity
     protected static void CheckRule(IBusinessRule rule)
     {
         var ruleResult = rule.Check();
-        if (ruleResult.IsFailed)
-        {
-            throw new RuleValidationException(ruleResult.Errors);
-        }
+        if (ruleResult.IsFailed) throw new RuleValidationException(ruleResult.Errors);
     }
 
     /// <summary>

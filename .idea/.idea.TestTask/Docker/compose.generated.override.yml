@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  testtask.api:
+    build:
+      context: "/home/ayefymenko/Work/Personal/TestTasks/TestTask"
+      dockerfile: "src/TestTask.Api/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/TestTask.Api.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "testtask.api:dev"
+    ports: []
+    volumes:
+    - "/home/ayefymenko/Work/Personal/TestTasks/TestTask/src/TestTask.Api:/app:rw"
+    - "/home/ayefymenko/Work/Personal/TestTasks/TestTask:/src:rw"
+    - "/home/ayefymenko/.nuget/packages:/home/app/.nuget/packages"
+    working_dir: "/app"
