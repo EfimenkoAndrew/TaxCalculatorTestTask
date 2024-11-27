@@ -1,0 +1,18 @@
+﻿@model TestTask.UI.Models.CalculationViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-action="CreateCalculation" method="post">
+    <div class="form-group">
+        <label for="inputValue">Input Value</label>03/2
+        <input type="text" class="form-control" id="inputValue" name="InputValue" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@if (Model is not null)
+{
+    <p>Result: @Model.Id</p>
+}

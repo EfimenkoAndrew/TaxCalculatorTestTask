@@ -7,13 +7,9 @@ services:
       - "8080"
       - "8081"
     ports:
-        - "5000:8081"
+        - "5000:8080"
     networks:
       - app-networtk
-# Windows only volumes
-#    volumes:
-#      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
-#      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
 
   testtask.ui:
     environment:
@@ -23,7 +19,7 @@ services:
       - "8080"
       - "8081"
     ports:
-      - "5001:8081"
+      - "5001:8080"
     networks:
       - app-networtk
 

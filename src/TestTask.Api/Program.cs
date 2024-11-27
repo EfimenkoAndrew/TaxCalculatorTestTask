@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using TestTask.Application;
 using TestTask.Infrastructure;
+using TestTask.Infrastructure.Exceptions;
 using TestTask.Persistence.CalculationsDb;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -41,9 +42,10 @@ using (var scope = app.Services.CreateScope())
     context.Database.Migrate();
 }
 
-app.UseSwagger();
-app.UseSwaggerUI();
+app.UseCustomExceptionHandler(app.Environment);
 
+app.UseSwagger();
+app.UseSwaggerUI(x => x.DisplayOperationId());
 app.UseHttpsRedirection();
 app.MapControllers();
 app.Run();

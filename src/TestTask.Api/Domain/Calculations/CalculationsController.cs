@@ -14,7 +14,7 @@ namespace TestTask.Api.Domain.Calculations;
 public class CalculationsController(IMediator mediator) : ApiControllerBase
 {
     [HttpPost]
-    [ProducesResponseType(typeof(CreatedResponse<Guid>), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(CreateCalculationCommandDto), StatusCodes.Status201Created)]
     public async Task<IActionResult> Calculate(CreateCalculationRequest request, CancellationToken cancellationToken = default)
     {
         var command = new CreateCalculationCommand(request.GrossAnnualSalary);

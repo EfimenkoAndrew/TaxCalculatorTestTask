@@ -18,3 +18,22 @@ services:
     - "/home/ayefymenko/Work/Personal/TestTasks/TestTask:/src:rw"
     - "/home/ayefymenko/.nuget/packages:/home/app/.nuget/packages"
     working_dir: "/app"
+  testtask.ui:
+    build:
+      context: "/home/ayefymenko/Work/Personal/TestTasks/TestTask"
+      dockerfile: "src/TestTask.UI/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/TestTask.UI.dll"
+    environment:
+      ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net8.0/TestTask.UI.staticwebassets.runtime.CT.json"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "testtask.ui:dev"
+    ports: []
+    volumes:
+    - "/home/ayefymenko/Work/Personal/TestTasks/TestTask/src/TestTask.UI:/app:rw"
+    - "/home/ayefymenko/Work/Personal/TestTasks/TestTask:/src:rw"
+    - "/home/ayefymenko/.nuget/packages:/home/app/.nuget/packages"
+    working_dir: "/app"
