@@ -72,7 +72,7 @@ public class Calculation : Entity
         );
 
         // notify
-        calculation.AddDomainEvent(new CalculationCreated(calculation.Id));
+        calculation.AddDomainEvent(new CalculationCreatedDomainEvent(calculation.Id));
 
         return calculation;
     }

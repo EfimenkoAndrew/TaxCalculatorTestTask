@@ -2,4 +2,4 @@
 
 namespace TestTask.Core.Domain.Calculations.Events;
 
-public record CalculationCreated(Guid Id) : IDomainEvent;
+public record CalculationCreatedDomainEvent(Guid Id) : IDomainEvent;
