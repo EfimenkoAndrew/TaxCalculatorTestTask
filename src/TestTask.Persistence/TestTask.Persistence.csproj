@@ -12,8 +12,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="CalculationsDb\EntityTypeConfigurations\" />
       <Folder Include="CalculationsDb\Migrations\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\TestTask.Core\TestTask.Core.csproj" />
     </ItemGroup>
 
 </Project>

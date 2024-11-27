@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -7,7 +7,7 @@ namespace TestTask.Persistence.CalculationsDb;
 public static class CalculationsDbRegistration
 {
     private const string ConnectionStringName = "CalculationDb";
-    
+
     public static void AddToDoListDb(this IServiceCollection services, IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString(ConnectionStringName)
