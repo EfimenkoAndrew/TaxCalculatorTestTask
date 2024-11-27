@@ -8,6 +8,7 @@ using TestTask.Infrastructure.Common;
 using TestTask.Infrastructure.Domain.Calculations;
 using TestTask.Infrastructure.Exceptions;
 using TestTask.Infrastructure.Processing;
+using TestTask.Infrastructure.SystemEvents;
 using TestTask.Persistence.CalculationsDb;
 
 namespace TestTask.Infrastructure;
@@ -24,14 +25,11 @@ public static class InfrastructureRegistration
             // add RabbitMq
             configurator.UsingRabbitMq((registration, factoryConfigurator) =>
             {
-                //factoryConfigurator.ConfigureEndpoints(registration);
+                factoryConfigurator.ConfigureEndpoints(registration);
                 //factoryConfigurator.AutoStart = true;
 
-                //factoryConfigurator.Message<AuthorCreated>(messageConfigurator => messageConfigurator.SetEntityName(nameof(AuthorCreated)));
-                //factoryConfigurator.Publish<AuthorCreated>();
-
-                //factoryConfigurator.Message<BockCreated>(messageConfigurator => messageConfigurator.SetEntityName(nameof(BockCreated)));
-                //factoryConfigurator.Publish<BockCreated>();
+                factoryConfigurator.Message<CalculationCreated>(messageConfigurator => messageConfigurator.SetEntityName(nameof(CalculationCreated)));
+                factoryConfigurator.Publish<CalculationCreated>();
             });
 
             configurator.AddEntityFrameworkOutbox<CalculationsDbContext>(o =>
