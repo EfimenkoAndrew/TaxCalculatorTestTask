@@ -1,0 +1,19 @@
+﻿services:
+  testtask.api:
+    image: testtask.api
+    build:
+      context: .
+      dockerfile: src/TestTask.Api/Dockerfile
+
+  database:
+    image: 'postgres:latest'
+    ports:
+      - 1432:5432
+    env_file:
+      - .env
+    volumes:
+      - db-lib-data:/var/lib/postgresql/data/
+
+volumes:
+  db-lib-data:
+  pgadmin-data:
