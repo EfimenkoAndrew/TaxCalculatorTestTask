@@ -3,15 +3,29 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__CalculationDb=Host=database;Port=5432;Database=test-task;Username=postgres;Password=postgres
-    ports:
+    expose:
       - "8080"
       - "8081"
+    ports:
+        - "5000:8081"
     networks:
       - app-networtk
 # Windows only volumes
 #    volumes:
 #      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
 #      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+
+  testtask.ui:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__CalculationDb=Host=database;Port=5432;Database=test-task;Username=postgres;Password=postgres
+    expose:
+      - "8080"
+      - "8081"
+    ports:
+      - "5001:8081"
+    networks:
+      - app-networtk
 
   database:
     image: 'postgres:latest'

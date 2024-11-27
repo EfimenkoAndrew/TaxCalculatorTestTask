@@ -52,7 +52,8 @@ public class CreateCalculationTests
         var act = () => Calculation.Create(data);
 
         // Assert
-        var validationException = act.Should()
+        var validationException = act
+            .Should()
             .Throw<ValidationException>()
             .Subject
             .Single();

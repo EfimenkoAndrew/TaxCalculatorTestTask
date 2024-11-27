@@ -4,3 +4,9 @@ services:
     build:
       context: .
       dockerfile: src/TestTask.Api/Dockerfile
+
+  testtask.ui:
+    image: testtask.ui
+    build:
+      context: .
+      dockerfile: src/TestTask.UI/Dockerfile
