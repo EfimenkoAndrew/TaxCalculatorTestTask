@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TestTask.Persistence.CalculationsDb;
@@ -11,9 +12,11 @@ using TestTask.Persistence.CalculationsDb;
 namespace TestTask.Persistence.CalculationsDb.Migrations
 {
     [DbContext(typeof(CalculationsDbContext))]
-    partial class CalculationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241127155307_AddCalculationCreatedAtMigration")]
+    partial class AddCalculationCreatedAtMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

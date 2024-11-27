@@ -18,7 +18,8 @@ public class Calculation : Entity
         decimal netAnnualSalary,
         decimal netMonthlySalary,
         decimal annualTaxPaid,
-        decimal monthlyTaxPaid
+        decimal monthlyTaxPaid,
+        DateTime createdAt
         )
     {
         Id = id;
@@ -28,6 +29,7 @@ public class Calculation : Entity
         NetMonthlySalary = netMonthlySalary;
         AnnualTaxPaid = annualTaxPaid;
         MonthlyTaxPaid = monthlyTaxPaid;
+        CreatedAt = createdAt;
     }
 
     public Guid Id { get; private set; }
@@ -43,6 +45,8 @@ public class Calculation : Entity
     public decimal AnnualTaxPaid { get; private set; }
 
     public decimal MonthlyTaxPaid { get; private set; }
+
+    public DateTime CreatedAt { get; private set; }
 
     public static Calculation Create(CreateCalculationData data)
     {
@@ -63,7 +67,8 @@ public class Calculation : Entity
             netAnnualSalary,
             netMonthlySalary,
             annualTaxPaid,
-            monthlyTaxPaid
+            monthlyTaxPaid,
+            DateTime.UtcNow
         );
 
         // notify
