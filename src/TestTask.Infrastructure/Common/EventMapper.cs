@@ -2,7 +2,7 @@
 using TestTask.Core.Domain.Calculations.Events;
 using TestTask.Infrastructure.SystemEvents;
 
-namespace Library.Infrastructure.Common;
+namespace TestTask.Infrastructure.Common;
 
 internal static class EventMapper
 {

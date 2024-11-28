@@ -1,7 +1,7 @@
-﻿using Library.Infrastructure.Common;
-using MassTransit;
+﻿using MassTransit;
 using MediatR;
 using TestTask.Core.Common;
+using TestTask.Infrastructure.Common;
 using TestTask.Persistence.CalculationsDb;
 
 namespace TestTask.Infrastructure.Processing;

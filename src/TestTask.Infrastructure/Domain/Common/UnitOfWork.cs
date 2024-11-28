@@ -1,7 +1,7 @@
 using TestTask.Core.Common;
 using TestTask.Persistence.CalculationsDb;
 
-namespace TestTask.Infrastructure.Common;
+namespace TestTask.Infrastructure.Domain.Common;
 
 public class UnitOfWork(CalculationsDbContext dbContext, IDomainEventsDispatcher domainEventsDispatcher) : IUnitOfWork
 {

@@ -1,5 +1,5 @@
 using HttpClients;
-using Library.Infrastructure.Common;
+using TestTask.UI.Common;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

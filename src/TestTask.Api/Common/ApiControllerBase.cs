@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Library.Api.Common;
+namespace TestTask.Api.Common;
 
 [ApiController]
 public abstract class ApiControllerBase : ControllerBase

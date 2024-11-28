@@ -1,4 +1,4 @@
-namespace Library.Api.Common;
+namespace TestTask.Api.Common;
 
 public record CreatedResponse<T>
 {

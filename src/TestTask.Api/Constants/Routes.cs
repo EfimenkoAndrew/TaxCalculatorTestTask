@@ -1,4 +1,4 @@
-﻿namespace Library.Api.Constants;
+﻿namespace TestTask.Api.Constants;
 
 public static class Routes
 {

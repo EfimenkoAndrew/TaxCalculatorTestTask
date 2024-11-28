@@ -1,6 +1,6 @@
 ﻿using HttpClients;
 
-namespace Library.Infrastructure.Common;
+namespace TestTask.UI.Common;
 
 internal class SystemHttpClientsSettings
 {
