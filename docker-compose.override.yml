@@ -15,6 +15,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__CalculationDb=Host=database;Port=5432;Database=test-task;Username=postgres;Password=postgres
+      - SystemHttpClientsSettings__TestTast=http://testtask.api:8080
     expose:
       - "8080"
       - "8081"
