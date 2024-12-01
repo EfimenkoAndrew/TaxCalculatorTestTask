@@ -10,3 +10,9 @@ services:
     build:
       context: .
       dockerfile: src/TestTask.UI/Dockerfile
+
+  testtask-angular:
+    image: testtask-angular
+    build:
+      context: .
+      dockerfile: src/TestTask.Angular/Dockerfile

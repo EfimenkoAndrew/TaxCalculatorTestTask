@@ -24,6 +24,18 @@ services:
     networks:
       - app-networtk
 
+  testtask-angular:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__CalculationDb=Host=database;Port=5432;Database=test-task;Username=postgres;Password=postgres
+      - SystemHttpClientsSettings__TestTast=http://testtask.api:8080
+    expose:
+      - "4200"
+    ports:
+      - "4201:4200"
+    networks:
+      - app-networtk
+
   database:
     image: 'postgres:latest'
     ports:
