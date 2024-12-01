@@ -1,0 +1,27 @@
+<form [formGroup]="calculateForm" (ngSubmit)="onSubmit()">
+  <h1>Calculate</h1>
+  <p>Enter the income.</p>
+  <div class="row">
+  <div class="col-sm-4">
+    <label for="income">Gross Annual Salary: </label>
+    <input type="number" formControlName="grossAnnualSalary" />
+    <button type="submit">Calculate</button>
+  </div>
+</div>
+@if (calculateForm.controls['grossAnnualSalary'].invalid) {
+  <div>
+    <span>Invalid format.</span>
+  </div>
+}
+</form>
+
+@if (calculation !== null) {
+<div>
+  <h2>Income Calculation</h2>
+  <p>Gross Annual Salary: {{ calculation.grossAnnualSalary }}</p>
+  <p>Gross Monthly Salary: {{ calculation.grossMonthlySalary }}</p>
+  <p>Net Annual Salary: {{ calculation.netAnnualSalary }}</p>
+  <p>Net Monthly Salary: {{ calculation.netMonthlySalary }}</p>
+  <p>Annual Tax Paid: {{ calculation.annualTaxPaid }}</p>
+</div>
+}
