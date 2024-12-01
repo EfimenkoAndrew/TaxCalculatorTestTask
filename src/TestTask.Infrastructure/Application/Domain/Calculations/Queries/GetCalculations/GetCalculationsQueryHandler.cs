@@ -16,7 +16,7 @@ public class GetCalculationsQueryHandler(CalculationsDbContext calculationsDbCon
         var skip = (query.PageNumber - 1) * query.Count;
 
         var calculations = await sqlQuery
-            .OrderBy(x => x.CreatedAt)
+            .OrderByDescending(x => x.CreatedAt)
             .Skip(skip)
             .Take(query.Count)
             .Select(c => new CalculationsDto(
