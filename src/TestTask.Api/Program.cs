@@ -11,6 +11,17 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
+builder.Services.AddCors(
+  options => options
+    .AddPolicy("AngularPolicy",
+  policyBuilder =>
+  {
+    policyBuilder
+      .AllowAnyOrigin()
+      .AllowAnyHeader()
+      .AllowAnyMethod();
+  }));
+
 builder.Services.AddControllers(options => options.ModelValidatorProviders.Clear())
     .AddJsonOptions(jsonOptions =>
     {
@@ -44,6 +55,7 @@ using (var scope = app.Services.CreateScope())
 
 app.UseCustomExceptionHandler(app.Environment);
 
+app.UseCors("AngularPolicy");
 app.UseSwagger();
 app.UseSwaggerUI(x => x.DisplayOperationId());
 app.UseHttpsRedirection();
