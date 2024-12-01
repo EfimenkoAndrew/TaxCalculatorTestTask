@@ -6,6 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { Calculation, CreateCalculationRequest } from '../models/calculation';
 
+
+
 @Component({
   selector: 'app-calculate',
   standalone: true,
